@@ -824,5 +824,5 @@ function lengthOfObj(obj) {
 }
 
 function log(msg) {
-	console.log(msg);
+	//console.log(msg);
 } 

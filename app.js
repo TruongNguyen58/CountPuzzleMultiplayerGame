@@ -72,8 +72,8 @@ var io = socketio.listen(server, {
 io.set('origins', '*:*');
 
 io.configure('development', function() {
-	// io.set('transports', [ 'xhr-polling' ]);
-	io.set('transports', [ 'websocket' ]);
+	io.set('transports', [ 'xhr-polling' ]);
+	// io.set('transports', [ 'websocket' ]);
 	io.set("polling duration", 15);
 	io.set('close timeout', 15); // 24h time out
 });

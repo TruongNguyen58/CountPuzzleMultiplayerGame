@@ -54,6 +54,10 @@ app.configure('development', function() {
 app.get('/users', function(req, res) {
 	game_server.users(req, res);
 });
+
+app.get('/checkonline', function(req, res) {
+	game_server.checkonline(req, res);
+});
 app.get('/ping', function(req, res) {
 	res.send('pong');
 });

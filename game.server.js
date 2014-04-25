@@ -52,6 +52,16 @@ game_server.users = function(req, res) {
 	res.send(str);
 };
 
+game_server.checkonline = function(req, res) {
+	var userId = req.param("userid");
+	console.log("UserId: " + userId);
+	var status = 0;
+	if (players.hasOwnProperty(userId)){
+		status = players[userId].status;
+	}
+	res.send(status+"");
+};
+
 game_server.chat = function(obj) {
 	log("begin chat with other user");
 	var dataToSend = {};

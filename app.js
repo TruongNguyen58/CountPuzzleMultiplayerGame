@@ -58,6 +58,9 @@ app.get('/users', function(req, res) {
 app.get('/checkonline', function(req, res) {
 	game_server.checkonline(req, res);
 });
+app.get('/players', function(req, res) {
+	game_server.getAllPlayers(req, res);
+});
 app.get('/ping', function(req, res) {
 	res.send('pong');
 });
@@ -97,7 +100,7 @@ io.sockets.on('connection', function(socket) {
 			}
 			if (obj.type == "sendMsgToOtherClient") {
 				game_server.sendMsgToOtherClient(obj);
-			}  else if (obj.type == "playerStatus") {
+			} else if (obj.type == "playerStatus") {
 				game_server.checkPlayerStatus(socket.id, obj);
 			}else if (obj.type == "findGame") {
 				game_server.findGame(obj);

@@ -62,6 +62,10 @@ game_server.checkonline = function(req, res) {
 	res.send(status+"");
 };
 
+game_server.getAllPlayers = function(req, res) {
+	res.send(JSON.stringify(players));
+};
+
 game_server.chat = function(obj) {
 	log("begin chat with other user");
 	var dataToSend = {};

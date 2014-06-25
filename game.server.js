@@ -582,6 +582,8 @@ game_server.startGame = function(obj) {
 	var prepareTime = obj.prepareTime;
 	dataToSend.notice = "startGame";
 	dataToSend.data = obj;
+	if(typeof(obj.game.currentRound) == "undefined")
+	    obj.game.currentRound = 0;
 	games[gameId] = obj.game;
 	if (games.hasOwnProperty(gameId)) {
 		for ( var playerId in games[gameId].clientPlayers) {
